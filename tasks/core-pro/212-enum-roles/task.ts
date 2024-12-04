@@ -1,22 +1,13 @@
-export enum UserPermission {
-  VIEW = 'VIEW',
-  READ = 'READ',
-  WRITE = 'WRITE',
-  DELETE = 'DELETE',
-}
+export enum UserPermission {}
 
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  EDITOR = 'EDITOR',
-  VIEWER = 'VIEWER',
-}
+export enum UserRole {}
 
 export interface User {
-  role: UserRole;
-  permissions: UserPermission[];
+  role: string;
+  permissions: string[];
 }
 
-export function hasAccess(user: User, requiredPermission: UserPermission): boolean {
+export function hasAccess(user: User, requiredPermission: string): boolean {
   if (user.role === 'ADMIN') return true;
   return user.permissions.includes(requiredPermission);
 }
