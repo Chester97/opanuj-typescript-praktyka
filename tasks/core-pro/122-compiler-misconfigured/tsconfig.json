@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES2023",
     "moduleResolution": "node10",
     "allowImportingTsExtensions": true,
     "esModuleInterop": false,

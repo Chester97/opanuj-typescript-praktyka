@@ -1,11 +1,14 @@
-import { hasAccess, User } from './task.ts';
+import { hasAccess, User, UserPermission, UserRole } from './task.ts';
 
 const userEditor: User = {
-  role: 'edtor',
-  permissions: ['READ', 'wrajt'],
+  role: UserRole.EDITOR,
+  permissions: [UserPermission.READ, UserPermission.WRITE],
 };
 
 const userViewer: User = {
-  role: 'reader',
-  permissions: ['rid'],
+  role: UserRole.VIEWER,
+  permissions: [UserPermission.READ],
 };
+
+hasAccess(userEditor, UserPermission.READ);
+hasAccess(userViewer, UserPermission.DELETE);
